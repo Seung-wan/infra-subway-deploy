@@ -1,89 +1,28 @@
-<p align="center">
-    <img width="200px;" src="https://raw.githubusercontent.com/woowacourse/atdd-subway-admin-frontend/master/images/main_logo.png"/>
-</p>
-<p align="center">
-  <img alt="npm" src="https://img.shields.io/badge/npm-%3E%3D%205.5.0-blue">
-  <img alt="node" src="https://img.shields.io/badge/node-%3E%3D%209.3.0-blue">
-  <a href="https://edu.nextstep.camp/c/R89PYi5H" alt="nextstep atdd">
-    <img alt="Website" src="https://img.shields.io/website?url=https%3A%2F%2Fedu.nextstep.camp%2Fc%2FR89PYi5H">
-  </a>
-  <img alt="GitHub" src="https://img.shields.io/github/license/next-step/atdd-subway-service">
-</p>
+# NEXTSTEP - 인프라공방 10기
 
-<br>
+- 교육 기간: `2023.01.29` ~ `2023.02.26`
+- NEXTSTEP 인프라 공방의 내용을 기록합니다.
 
-# 인프라공방 샘플 서비스 - 지하철 노선도
+## 학습 목표
 
-<br>
+- 4주간 인프라를 직접 만들어보며 AWS, 쿠버네티스 등에 대한 막연한 **두려움을 떨쳐냅니다.**
+- **애플리케이션이 운영되는 환경**을 구성해보며 네트워크, 운영체제, 데이터베이스, 컨테이너 등의 주제에 대해 생각해봅니다.
+- **성능**이란 막연한 주제를 앞으로 어떻게 바라보고 접근할지 경험해봅니다.
 
-## 🚀 Getting Started
+## 커리큘럼
 
-### Install
+👨🏻‍💻 **그럴듯한 인프라 만들기**  
+🌐 **망 구성하기** : AWS VPC를 구성하고 네트워크 통신과정을 학습해요  
+🚚 **배포하기** : 지속적 통합을 경험하고 컨테이너를 학습해요
 
-#### npm 설치
+🕵🏻‍♂️ **성능 진단하기**  
+📈 **성능 테스트** : 성능개선을 위한 여러 요소(사용자/처리량/시간)를 학습하고 부하테스트를 계획, 실행해요  
+🔍 **인프라 운영하기** : 모니터링, 로깅 등을 경험해요
 
-```
-cd frontend
-npm install
-```
+🛫 **안정적인 서비스 만들기**  
+⚙️ **성능 개선하기** : HTTP2.0, 캐싱, 비동기 처리, 스케일아웃 등을 경험하여 화면 응답시간을 개선하는 경험을 해요  
+♾️ **쿠버네티스로 구성하기** : 쿠버네티스를 활용하여 장애내성있는 서비스를 구성하고 배포 파이프라인을 구성하여 지속적 통합을 경험해봅니다
 
-> `frontend` 디렉토리에서 수행해야 합니다.
-
-### Usage
-
-#### webpack server 구동
-
-```
-npm run dev
-```
-
-#### application 구동
-
-```
-./gradlew clean build
-```
-
-<br>
-
-## 미션
-
-- 미션 진행 후에 아래 질문의 답을 README.md 파일에 작성하여 PR을 보내주세요.
-
-### 0단계 - pem 키 생성하기
-
-1. 서버에 접속을 위한 pem키를 [구글드라이브](https://drive.google.com/drive/folders/1dZiCUwNeH1LMglp8dyTqqsL1b2yBnzd1?usp=sharing)에 업로드해주세요
-
-2. 업로드한 pem키는 무엇인가요.
-
-- Seung-wan-key.pem
-
-- pem키는 EC2 인스턴스에 ssh 접속을 하기 위해 사용됩니다. EC2에 접속하기 위해서 공개키 형식을 사용하고 있는데 pem키를 생성하면 비밀키를 다운로드받게 됩니다. pem키를 이용하여 인스턴스를 생성하면 인스턴스의 ~/.ssh/authorized_keys 파일에 생성한 pem키에 맞는 공개키가 생성됩니다.
-  pem키를 이용하여 인스턴스에 접근하려고 하면 인스턴스는 pem키로 암호화된 정보를 authorized_keys 파일에 존재하는 공개키로 복호화를 시도하고, 성공했다면 인스턴스에 접속할 수 있게 됩니다.
-
-### 1단계 - 망 구성하기
-
-1. 구성한 망의 서브넷 대역을 알려주세요
-
-- 대역 :
-  - Seung-wan-public-a: 192.168.3.0/26
-  - Seung-wan-public-c: 192.168.3.64/26
-  - Seung-wan-internal-a: 192.168.3.128/27
-  - Seung-wan-bastion-a: 192.168.3.160/27
-
-2. 배포한 서비스의 공인 IP(혹은 URL)를 알려주세요
-
-- URL : http://infra-seungwan.kro.kr/
-
----
-
-### 2단계 - 배포하기
-
-1. TLS가 적용된 URL을 알려주세요
-
-- URL :
-
----
-
-### 3단계 - 배포 스크립트 작성하기
-
-1. 작성한 배포 스크립트를 공유해주세요.
+🏎️ **조회 성능 개선하기**  
+🔧 **쿼리 튜닝하기** : 쿼리를 최적화하여 조회 성능을 개선해봅니다.  
+⛏️ **인덱스 설계하기** : 인덱스를 설정하여 조회 성능을 개선해봅니다.
