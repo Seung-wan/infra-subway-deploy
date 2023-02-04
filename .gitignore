@@ -47,3 +47,5 @@ subway.log
 ### submodule
 src/main/resources/config/**
 .gitmodules
+nginx/fullchain.pem
+nginx/privkey.pem
