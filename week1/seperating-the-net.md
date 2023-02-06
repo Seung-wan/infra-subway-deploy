@@ -35,3 +35,34 @@ AWS 상에서 네트워크를 구성하며, 네트워크 기본 개념들을 학
   - 하나의 Region에 종속
   - 다수의 AZ 설정 가능
   - VPC IP 대역 내에서 망 구성
+
+### L2 Switch
+
+- Multiple Access를 위한 장비
+- 서버에는 Network Interface Card가 있음 (NIC)
+- Network Interface Card에는 MAC 주소가 있음
+  - 3c:22:fb:78:4a:c0 (앞 6자리는 제조사, 뒤는 식별자)
+
+### L2 Switch 통신방식
+
+- MAC 테이블에 정보가 있을 때: Forwarding
+- MAC 테이블에 정보가 없을 때: Flooding
+  - 응답하는 장비가 있으면 그 포트에 장비가 있다고 인지하고 MAC 테이블에 등록
+
+### Router
+
+- 서로 다른 네트워크간의 통신을 중계
+- MAC 테이블에 정보가 있을 때: Forwarding
+- MAC 테이블에 정보가 없을 때: Drop
+
+- 라우팅 프로토콜을 활용하여 어떤 대역으로 패킷을 보내는 것이 최적 경로인지 학습
+
+### 인터넷 통신
+
+- 외부 네트워크와 통신하기 위해서는 Public IP가 있어야 함
+- 라우터는 Private IP가 목적지일 경우 인터넷 구간으로 보내지 않음
+- 따라서 , Private IP를 Public IP로 변환해주어야 함(NAT)
+
+- 자신이 속한 subnet의 서버는 가상 스위치를 통해 직접 통신
+- 자신이 속하지 않은 서브넷은 가상 라우터를 통해 직접 통신
+- 그 외의 0.0.0.0/0 (전체 대역)은 Internet Gateway로 통신을 보내도록 학습
